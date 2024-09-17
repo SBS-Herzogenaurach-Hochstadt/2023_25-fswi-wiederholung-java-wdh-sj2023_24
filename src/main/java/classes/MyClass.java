@@ -10,6 +10,11 @@ public class MyClass implements Comparable<MyClass> {
         MyClass.COUNTER++;
     }
 
+    // nötig für Entscheidung gerade oder ungerade
+    public int getObjNumber() {
+        return objNumber;
+    }
+
     @Override
     public String toString() {
         return String.format("Ich bin Objekt Nummer: %d", objNumber);
