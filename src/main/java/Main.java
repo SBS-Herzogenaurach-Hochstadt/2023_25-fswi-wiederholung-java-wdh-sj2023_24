@@ -1,25 +1,20 @@
 import classes.MyClass;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
   public static void main(String[] args) {
 
-    MyClass[] classArray = new MyClass[100];
-    List<MyClass> classList = new ArrayList<>();
+    MyClass[] myclassArray = new MyClass[100];
 
-    for(int i = 0; i < classArray.length; i++) {
-      MyClass bufClass = new MyClass("Ich bin Objekt Nummer: " + (i + 1));
-      classArray[i] = bufClass;
-      classList.add(bufClass);
+    for (int i = 0; i < myclassArray.length; i++) {
+      myclassArray[i] = new MyClass(new Random().nextInt(1000) + 1);
     }
 
-    System.out.println(classArray[49]);
-    System.out.println(MyClass.COUNTER);
-
-    System.out.println(classList.get(49));
-    System.out.println(MyClass.COUNTER);
+    System.out.println(Arrays.deepToString(myclassArray));
+    Arrays.sort(myclassArray);
+    System.out.println(Arrays.deepToString(myclassArray));
   }
 }
